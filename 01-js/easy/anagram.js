@@ -7,7 +7,28 @@
   - `npm run test-anagram`
 */
 
-function isAnagram(str1, str2) {
+function isAnagram(q,t) {
+    if (q.length !== t.length) {
+      return false;
+    }
+
+    var freq = {};
+    for (var i = 0; i < q.length; i++) {
+       freq[q[i]]= (freq[q[i]] || 0) + 1;
+      freq[t[i]] = (freq[t[i]] || 0) - 1;
+      console.log(freq)
+    }
+    console.log('final')
+    console.log(freq)
+    for (var char in freq) {
+      if (freq[char] !== 0) {
+        return false;
+      }
+    }
+  
+
+    return true;
+
 
 }
 
