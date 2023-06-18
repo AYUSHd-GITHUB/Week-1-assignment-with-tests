@@ -7,7 +7,11 @@
   - `npm run test-anagram`
 */
 
+
+
 function isAnagram(q,t) {
+  q= q.toLowerCase() ;
+  t = t.toLowerCase();
     if (q.length !== t.length) {
       return false;
     }
@@ -16,8 +20,10 @@ function isAnagram(q,t) {
     for (var i = 0; i < q.length; i++) {
        freq[q[i]]= (freq[q[i]] || 0) + 1;
       freq[t[i]] = (freq[t[i]] || 0) - 1;
+      console.log(freq)
     }
-
+    console.log('final')
+    console.log(freq)
     for (var char in freq) {
       if (freq[char] !== 0) {
         return false;
@@ -27,7 +33,7 @@ function isAnagram(q,t) {
 
     return true;
 
-
 }
 
 module.exports = isAnagram;
+
